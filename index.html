@@ -6,7 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Document</title>
+    <title>Login</title>
 </head>
 <body>
 <nav>
@@ -71,9 +71,9 @@
        let val = usuarios.findIndex(e=> e.correo == correo)
 
        if(correo == usuarios[val].correo && password == usuarios[val].password){
-           sessionStorage.setItem('Usuario', JSON.stringify(usuarios[val]))
-           sessionStorage.setItem('auth',"si");
-           location.href = "home.html";
+            localStorage.setItem('Usuario', JSON.stringify(usuarios[val]))
+            localStorage.setItem('auth',"si");
+            location.href = "./home.html";
        }else{
            alert("El correo y la contraseña no coinciden");
        }
